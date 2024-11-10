@@ -2,12 +2,15 @@ import { fetchStock } from "./stockData.js";
 import axios from 'axios'
 import express from 'express'
 import cors from 'cors'
-const app = express()
+import dotenv from 'dotenv'
 
+
+const app = express()
+dotenv.config()
 app.use(cors())
 app.use(express.json())
 
-
+const PORT = process.env.PORT || 9999
 app.get('/indicies',async (req,res)=>{
   
     console.log("going");
@@ -46,7 +49,7 @@ app.post('/getit',async (req,res)=>{
 
 
 
-app.listen(9999,()=>{
-    console.log("Ready....");
+app.listen(PORT,()=>{
+    console.log(`http://localhost:${PORT}`);
     
 })
