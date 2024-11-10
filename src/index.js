@@ -10,7 +10,7 @@ dotenv.config()
 app.use(cors())
 app.use(express.json())
 
-const PORT = process.env.PORT || 9999
+const port = process.env.PORT || 9999
 app.get('/indicies',async (req,res)=>{
   
     console.log("going");
@@ -49,7 +49,7 @@ app.post('/getit',async (req,res)=>{
 
 
 
-app.listen(PORT,()=>{
-    console.log(`http://localhost:${PORT}`);
+app.listen(port,()=>{
+    console.log(`http://localhost:${port}`);
     
 })
