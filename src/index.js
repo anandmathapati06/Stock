@@ -11,6 +11,10 @@ app.use(cors())
 app.use(express.json())
 
 const port = process.env.PORT || 9999
+
+app.get('/',async (req,res)=>{
+    res.send("running")
+})
 app.get('/indicies',async (req,res)=>{
   
     console.log("going");
